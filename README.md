@@ -10,14 +10,15 @@ Seth and Tom needed extra help with the election audit, they needed a deep analy
 -----------------------------
 The total votes were 369,711
 _____________________________________________________________________________________________________________
-  Initialize a total vote counter.
-  total_votes = 0
   
-    For each row in the CSV file.
-     for row in reader:
+    Initialize a total vote counter.
+    total_votes = 0
+  
+      For each row in the CSV file.
+      for row in reader:
 
-        Add to the total vote count
-        total_votes = total_votes + 1
+          Add to the total vote count
+          total_votes = total_votes + 1
 
 -Provide a breakdown of the number of votes and the percentage of total votes for each county in the precinct.
 -----------------------------
@@ -29,6 +30,7 @@ Denver: 82.8% (306,055)
 
 Arapahoe: 6.7% (24,801)
 _____________________________________________________________________________________________________________
+    
     For each row in the CSV file.
     for row in reader:
       Extract the county name from each row.
@@ -50,15 +52,16 @@ ________________________________________________________________________________
 -----------------------------
 Largest County Turnout: Denver
 ___________________________________________________________________________________________________________
-  Track the largest county and county voter turnout.
-  largest_county = ""
-  county_voter = 0
-    Write a for loop to get the county from the county dictionary.
-    for county_name in county_votes_dict:
-        Write an if statement to determine the winning county and get its vote count.
-        if (county_votes >county_voter):
-             county_voter = county_votes
-             largest_county = county_name
+ 
+    Track the largest county and county voter turnout.
+    largest_county = ""
+    county_voter = 0
+      Write a for loop to get the county from the county dictionary.
+      for county_name in county_votes_dict:
+          Write an if statement to determine the winning county and get its vote count.
+          if (county_votes >county_voter):
+              county_voter = county_votes
+              largest_county = county_name
 
 -Provide a breakdown of the number of votes and the percentage of the total votes each candidate received.
 -----------------------------
@@ -69,12 +72,12 @@ Diana DeGette: 73.8% (272,892)
 Raymon Anthony Doane: 3.1% (11,606)
 ___________________________________________________________________________________________________________
 
-  Candidate Options and candidate votes.
-  candidate_options = []
-  candidate_votes = {}
+    Candidate Options and candidate votes.
+    candidate_options = []
+    candidate_votes = {}
         Get the candidate name from each row.
         candidate_name = row[2]
-         If the candidate does not match any existing candidate add it to the candidate list
+        If the candidate does not match any existing candidate add it to the candidate list
         if candidate_name not in candidate_options:
 
             Add the candidate name to the candidate list.
@@ -89,14 +92,17 @@ ________________________________________________________________________________
 -Which candidate won the election, what was their vote count, and what was their percentage of the total votes?
 -----------------------------
 Winner: Diana DeGette
+
 Winning Vote Count: 272,892
+
 Winning Percentage: 73.8%
 ___________________________________________________________________________________________________________
-#Track the winning candidate, vote count and percentage
-  winning_candidate = ""
-  winning_count = 0
-  winning_percentage = 0
-    for candidate_name in candidate_votes:
+
+    Track the winning candidate, vote count and percentage
+    winning_candidate = ""
+    winning_count = 0
+    winning_percentage = 0
+      for candidate_name in candidate_votes:
 
         Retrieve vote count and percentage
         votes = candidate_votes.get(candidate_name)
@@ -110,6 +116,7 @@ ________________________________________________________________________________
             winning_candidate = candidate_name
             winning_percentage = vote_percentage
             
+The final output for the election analysis is:
 
 ![election_results_analysis](Resources/election_results_analysis.png)
 
